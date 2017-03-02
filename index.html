@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>repl.it</title>
+       <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
+        <script type="text/javascript" src="rssRead.js"></script>
+       <script type="text/javascript" src="index.js"></script>
+     
+        <link href="index.css" rel="stylesheet" type="text/css" />
+ 
+      
+    </head>
+    <body>
+      <div id="container" class="container">
+      <div id="name" class="name">
+      <h3>RSS Haiku</h3><h1>Generator</h1>
+     
+ </div>
+  <div id ="feed" class="feed"></div>
+<div id ="title" class="title"></div> 
+ <div id ="form" class = "form"><form onsubmit="return false"><div><p class="suggestions">RSS Suggestions <select name="menu" onchange="changeUrlBox(this)">
+<option value="https://www.reddit.com/r/politics/comments.rss">[reddit]Politics</option>
+<option value="https://www.reddit.com/r/askReddit/comments.rss">[reddit]askReddit</option>
+<option value="http://rss.cnn.com/rss/cnn_topstories.rss">CNN Top Headlines</option>
+<option value="https://twitrss.me/twitter_user_to_rss/?user=realdonaldtrump">D-Trumps Twitt Feed</option>
+</select></p></div><div><input type="text" id="urlBox" name="url" size="70" value='https://www.reddit.com/r/relationship/comments.rss'></div><div class="button"><button type="button" onClick ='userCall()'>Submit</button></div></form></div>
+</div>
+<script type ="text/javascript">  initialize("https://www.reddit.com/r/relationship/comments.rss")</script>
+      
+<!--google.setOnLoadCallback(-->
+
+    </body>
+</html>
+
+
