@@ -1,45 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>repl.it</title>
-       <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
-        <script type="text/javascript" src="rssRead.js"></script>
-       <script type="text/javascript" src="index.js"></script>
+google.load("feeds", "1");
+var entry; //entry of the feed
+var entry2; //content
+var poem ='';
+var title ='';
+var url;
+function initialize(arg) {
+  //url=document.getElementById("urlBox").value;
+  var feed = new google.feeds.Feed(arg,{
+  api_key : 'gtemo248xegxwz9txbe8qx4ybyuu3ohnifdpfbac',
+  count : 5,
+  order_by : 'title',
+  order_dir : 'asc'});
+  feed.load(function(result) {
+    if (!result.error) {
+      //var container = document.getElementById("feed");//the div
+      for (var i = 0; i < result.feed.entries.length; i++) {
+      entry = result.feed.entries[i];
+      entry2 += entry.content;
+      entry2 = entry2.replace(/<.*?>/g, '');
+      var div = document.createElement("div");
+      }
      
-        <link href="index.css" rel="stylesheet" type="text/css" />
- 
+     
       
-    </head>
-    <body>
-      <div id="container" class="container">
-      <div id="name" class="name">
-      <h3>RSS Haiku</h3><h1>Generator</h1>
- </div>
- <div id="suggest" class="suggest"><p class="suggestions">RSS Suggestions <select name="menu" onchange="changeUrlBox(this)">
-<option value="https://www.reddit.com/r/politics/comments.rss">[reddit]Politics</option>
-<option value="https://www.reddit.com/r/askReddit/comments.rss">[reddit]askReddit</option>
-<option value="http://rss.cnn.com/rss/cnn_topstories.rss">CNN Top Headlines</option>
-<option value="https://twitrss.me/twitter_user_to_rss/?user=realdonaldtrump">D-Trumps Twitt Feed</option>
-</select></p></div>
-  <div id ="feed" class="feed">
-    <div id ="form" class = "titleDiv"><form onsubmit="return false"><div><input type="text" id="urlBox" name="url" size="70" value='https://www.reddit.com/r/relationship/comments.rss' onkeydown="userCall()"></div>
-    
-    <!--<div class="button"><button type="button" onClick ='userCall()'>Submit</button></div>-->
-    
-    </form></div>
-    
-    
-  </div>
-<div id ="title" class="title"></div> 
- 
-</div>
-<script type ="text/javascript">  initialize("https://www.reddit.com/r/relationship/comments.rss")</script>
       
-<!--google.setOnLoadCallback(-->
+      }
+      }
+      
+      );
 
-    </body>
-</html>
-
-
+    }
+    
