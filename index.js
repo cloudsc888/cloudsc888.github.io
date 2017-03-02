@@ -1,34 +1,35 @@
-
+//have to create onLoad function to load certain DIVS
 window.onload = function () {
   var feed = document.getElementById("feed");
   //title = makeDivHtml('<h2>' + url.slice(url.indexOf('.')+1, url.indexOf('.com'))+'</h2><br>');
   var userDiv= document.createElement('div');
-  var titleDiv =document.createElement('div');
-  titleDiv.className = "titleDiv";
+  // var titleDiv =document.createElement('div');
+  // titleDiv.className = "titleDiv";
   userDiv.setAttribute("id", "userDiv");
-  title = makeDivHtml('<span><h2>' + url +'</h2></span><br>');
+  // title = makeDivHtml('<span><h2>' + url +'</h2></span><br>');
   poem = makeDivHtml(generateHaiku(entry2));
-  titleDiv.appendChild(title);
-  userDiv.appendChild(titleDiv);
+  // titleDiv.appendChild(title);
+  // userDiv.appendChild(titleDiv);
   userDiv.appendChild(poem);
   feed.appendChild(userDiv);
    entry2 ='';//clear the entry from the reed retriever
+   document.getElementById("urlBox").focus();
    };
 
 function userCall(){
 initialize(document.getElementById("urlBox").value);
 var userDiv= document.createElement('div');
 userDiv.setAttribute("id", "userDiv");
-var titleDiv =document.createElement('div');
+// var titleDiv =document.createElement('div');
 
 var userEntry =  makeDivHtml(generateHaiku(entry2));
-title = makeDivHtml('<span><h2>' + url +'</h2></span><br>');
+// title = makeDivHtml('<span><h2>' + url +'</h2></span><br>');
 
 var feed = document.getElementById("feed");
 var divRemove = document.getElementById("userDiv");
-    titleDiv.className = "titleDiv";
-  titleDiv.appendChild(title);
-  userDiv.appendChild(titleDiv);
+    // titleDiv.className = "titleDiv";
+  // titleDiv.appendChild(title);
+  // userDiv.appendChild(titleDiv);
   userDiv.appendChild(userEntry);
   if (divRemove){
 
