@@ -49,7 +49,10 @@ function makeDivHtml(str) {
   return element;
 }    
     
-    
+// Vowel is a sylabble tho conditions:
+//no -es -ed -e  but not le
+// length = 3 = 1 sylla
+// double vowels = 1    
   
 function countSyl(word) {
 
@@ -127,6 +130,7 @@ function writeLine(blurb,length,syllables){
     }
 
   }
+  line = line.slice(0, line.lastIndexOf(' ')+1).concat(line.slice(line.lastIndexOf(' ')+1).toUpperCase());
 return line;
 }
 
@@ -156,7 +160,13 @@ function randomWord(arr) {
 }
 
 function changeUrlBox(arg){
+  
   document.getElementById ("urlBox").value = arg.value;
+}
+function boxAction(){
+    if(event.keyCode == 13) {
+      userCall();
+    }
 }
 
 
